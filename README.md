@@ -1,8 +1,4 @@
-# react-oidc-context
-
-[![Stable Release](https://img.shields.io/npm/v/react-oidc-context.svg)](https://npm.im/react-oidc-context)
-[![CI](https://github.com/tniah/react-oidc-context/actions/workflows/ci.yml/badge.svg)](https://github.com/tniah/react-oidc-context/actions/workflows/ci.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/tniah/react-oidc-context)](https://app.codecov.io/gh/tniah/react-oidc-context)
+# vps-react-oidc-client
 
 Lightweight auth library using the
 [vps-oidc-client](https://github.com/tniah/oidc-client-ts) library for React
@@ -62,7 +58,7 @@ Configure the library by wrapping your application in `AuthProvider`:
 // src/index.jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { AuthProvider } from "react-oidc-context";
+import { AuthProvider } from "vps-react-oidc-client";
 import App from "./App";
 
 const oidcConfig = {
@@ -87,7 +83,7 @@ Use the `useAuth` hook in your components to access authentication state
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth } from "react-oidc-context";
+import { useAuth } from "vps-react-oidc-client";
 
 function App() {
     const auth = useAuth();
@@ -135,7 +131,7 @@ components:
 ```jsx
 // src/Profile.jsx
 import React from "react";
-import { withAuth } from "react-oidc-context";
+import { withAuth } from "vps-react-oidc-client";
 
 class Profile extends React.Component {
     render() {
@@ -155,7 +151,7 @@ As a child of `AuthProvider` with a user containing an access token:
 ```jsx
 // src/Posts.jsx
 import React from "react";
-import { useAuth } from "react-oidc-context";
+import { useAuth } from "vps-react-oidc-client";
 
 const Posts = () => {
     const auth = useAuth();
@@ -231,7 +227,7 @@ to access this route without authentication, they will be redirected to the logi
 
 ```jsx
 import React from 'react';
-import { withAuthenticationRequired } from "react-oidc-context";
+import { withAuthenticationRequired } from "vps-react-oidc-client";
 
 const PrivateRoute = () => (<div>Private</div>);
 
@@ -247,7 +243,7 @@ The underlying [`UserManagerEvents`](https://github.com/tniah/oidc-client-ts/blo
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth } from "react-oidc-context";
+import { useAuth } from "vps-react-oidc-client";
 
 function App() {
     const auth = useAuth();
@@ -282,7 +278,7 @@ const oidcConfig: AuthProviderProps = {
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth, hasAuthParams } from "react-oidc-context";
+import { useAuth, hasAuthParams } from "vps-react-oidc-client";
 
 function App() {
     const auth = useAuth();
@@ -320,7 +316,7 @@ Use the `useAutoSignin` hook inside the AuthProvider to automatically sign in.
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAutoSignin } from "react-oidc-context";
+import { useAutoSignin } from "vps-react-oidc-client";
 
 function App() {
     // If you provide no signinMethod at all, the default is signinRedirect
