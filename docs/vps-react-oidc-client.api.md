@@ -4,22 +4,22 @@
 
 ```ts
 
-import type { QuerySessionStatusArgs } from 'oidc-client-ts';
+import type { QuerySessionStatusArgs } from 'vps-oidc-client';
 import { default as React_2 } from 'react';
-import type { RevokeTokensTypes } from 'oidc-client-ts';
-import type { SessionStatus } from 'oidc-client-ts';
-import type { SigninPopupArgs } from 'oidc-client-ts';
-import type { SigninRedirectArgs } from 'oidc-client-ts';
-import type { SigninResourceOwnerCredentialsArgs } from 'oidc-client-ts';
-import type { SigninSilentArgs } from 'oidc-client-ts';
-import type { SignoutPopupArgs } from 'oidc-client-ts';
-import type { SignoutRedirectArgs } from 'oidc-client-ts';
-import type { SignoutResponse } from 'oidc-client-ts';
-import type { SignoutSilentArgs } from 'oidc-client-ts';
-import { User } from 'oidc-client-ts';
-import { UserManager } from 'oidc-client-ts';
-import type { UserManagerEvents } from 'oidc-client-ts';
-import { UserManagerSettings } from 'oidc-client-ts';
+import type { RevokeTokensTypes } from 'vps-oidc-client';
+import type { SessionStatus } from 'vps-oidc-client';
+import type { SigninPopupArgs } from 'vps-oidc-client';
+import type { SigninRedirectArgs } from 'vps-oidc-client';
+import type { SigninResourceOwnerCredentialsArgs } from 'vps-oidc-client';
+import type { SigninSilentArgs } from 'vps-oidc-client';
+import type { SignoutPopupArgs } from 'vps-oidc-client';
+import type { SignoutRedirectArgs } from 'vps-oidc-client';
+import type { SignoutResponse } from 'vps-oidc-client';
+import type { SignoutSilentArgs } from 'vps-oidc-client';
+import { User } from 'vps-oidc-client';
+import { UserManager } from 'vps-oidc-client';
+import type { UserManagerEvents } from 'vps-oidc-client';
+import { UserManagerSettings } from 'vps-oidc-client';
 
 // @public (undocumented)
 export const AuthContext: React_2.Context<AuthContextProps | undefined>;

@@ -1,4 +1,4 @@
-import type { User } from "oidc-client-ts";
+import type { User } from "vps-oidc-client";
 
 import type { AuthState, ErrorContext } from "./AuthState";
 

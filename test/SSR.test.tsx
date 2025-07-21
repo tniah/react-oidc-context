@@ -3,7 +3,7 @@ import { useAuth } from "../src/useAuth";
 import { createWrapper } from "./helpers";
 
 // force Node environment (no window)
-jest.unmock("oidc-client-ts");
+jest.unmock("vps-oidc-client");
 
 describe("In a Node SSR environment", () => {
     it("auth state is initialised", async () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import type { SigninRedirectArgs } from "oidc-client-ts";
+import type { SigninRedirectArgs } from "vps-oidc-client";
 
 import { useAuth } from "./useAuth";
 import { hasAuthParams } from "./utils";
@@ -36,7 +36,7 @@ export const withAuthenticationRequired = <P extends object>(
     options: WithAuthenticationRequiredProps = {},
 ): React.FC<P> => {
     const { OnRedirecting = (): React.JSX.Element => <></>, onBeforeSignin, signinRedirectArgs } = options;
-    const displayName = `withAuthenticationRequired(${Component.displayName || Component.name})`;
+    const displayName = `withAuthenticationRequired(${ Component.displayName || Component.name })`;
     const C: React.FC<P> = (props) => {
         const auth = useAuth();
 
@@ -45,13 +45,13 @@ export const withAuthenticationRequired = <P extends object>(
                 auth.isLoading || auth.activeNavigator || auth.isAuthenticated) {
                 return;
             }
-            void (async (): Promise<void> => {
+            void ( async (): Promise<void> => {
                 if (onBeforeSignin) await onBeforeSignin();
                 await auth.signinRedirect(signinRedirectArgs);
-            })();
-        }, [auth.isLoading, auth.isAuthenticated, auth]);
+            } )();
+        }, [ auth.isLoading, auth.isAuthenticated, auth ]);
 
-        return auth.isAuthenticated ? <Component {...props} /> : OnRedirecting();
+        return auth.isAuthenticated ? <Component { ... props } /> : OnRedirecting();
     };
 
     C.displayName = displayName;

@@ -7,7 +7,7 @@ import type {
     SignoutRedirectArgs,
     SignoutSilentArgs,
     User,
-} from "oidc-client-ts";
+} from "vps-oidc-client";
 
 /**
  * The auth state which, when combined with the auth methods, make up the return object of the `useAuth` hook.
@@ -16,7 +16,7 @@ import type {
  */
 export interface AuthState {
     /**
-     * See [User](https://authts.github.io/oidc-client-ts/classes/User.html) for more details.
+     * See [User](https://github.com/tniah/vps-oidc-client/blob/364961e12b28508cee6f556d90462f4630ee589c/src/User.ts) for more details.
      */
     user?: User | null;
 

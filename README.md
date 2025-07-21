@@ -5,7 +5,7 @@
 [![Codecov](https://img.shields.io/codecov/c/github/tniah/react-oidc-context)](https://app.codecov.io/gh/tniah/react-oidc-context)
 
 Lightweight auth library using the
-[oidc-client-ts](https://github.com/tniah/oidc-client-ts) library for React
+[vps-oidc-client](https://github.com/tniah/oidc-client-ts) library for React
 single page applications (SPA). Support for
 [hooks](https://reactjs.org/docs/hooks-intro.html) and
 [higher-order components (HOC)](https://reactjs.org/docs/higher-order-components.html).
@@ -198,7 +198,7 @@ As **not** a child of `AuthProvider` (e.g. redux slice) when using local storage
 
 ```jsx
 // src/slice.js
-import { User } from "oidc-client-ts"
+import { User } from "vps-oidc-client"
 
 function getUser() {
     const oidcStorage = localStorage.getItem(`oidc.user:<your authority>:<your client id>`)
@@ -242,7 +242,7 @@ export default withAuthenticationRequired(PrivateRoute, {
 
 ### Adding event listeners
 
-The underlying [`UserManagerEvents`](https://authts.github.io/oidc-client-ts/classes/UserManagerEvents.html) instance can be imperatively managed with the `useAuth` hook.
+The underlying [`UserManagerEvents`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerEvents.ts) instance can be imperatively managed with the `useAuth` hook.
 
 ```jsx
 // src/App.jsx
