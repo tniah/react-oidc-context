@@ -1,11 +1,11 @@
 # react-oidc-context
 
 [![Stable Release](https://img.shields.io/npm/v/react-oidc-context.svg)](https://npm.im/react-oidc-context)
-[![CI](https://github.com/authts/react-oidc-context/actions/workflows/ci.yml/badge.svg)](https://github.com/authts/react-oidc-context/actions/workflows/ci.yml)
-[![Codecov](https://img.shields.io/codecov/c/github/authts/react-oidc-context)](https://app.codecov.io/gh/authts/react-oidc-context)
+[![CI](https://github.com/tniah/react-oidc-context/actions/workflows/ci.yml/badge.svg)](https://github.com/tniah/react-oidc-context/actions/workflows/ci.yml)
+[![Codecov](https://img.shields.io/codecov/c/github/tniah/react-oidc-context)](https://app.codecov.io/gh/tniah/react-oidc-context)
 
 Lightweight auth library using the
-[oidc-client-ts](https://github.com/authts/oidc-client-ts) library for React
+[oidc-client-ts](https://github.com/tniah/oidc-client-ts) library for React
 single page applications (SPA). Support for
 [hooks](https://reactjs.org/docs/hooks-intro.html) and
 [higher-order components (HOC)](https://reactjs.org/docs/higher-order-components.html).
@@ -22,14 +22,14 @@ single page applications (SPA). Support for
 ## Documentation
 
 This library implements an auth context provider by making use of the
-`oidc-client-ts` library. Its configuration is tight coupled to that library.
+`vps-oidc-client` library. Its configuration is tight coupled to that library.
 
-- [oidc-client-ts](https://github.com/authts/oidc-client-ts)
+- [vps-oidc-client](https://github.com/tniah/oidc-client-ts)
 
 The
-[`User`](https://authts.github.io/oidc-client-ts/classes/User.html)
+[`User`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/User.ts)
 and
-[`UserManager`](https://authts.github.io/oidc-client-ts/classes/UserManager.html)
+[`UserManager`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManager.ts)
 is hold in this context, which is accessible from the
 React application. Additionally it intercepts the auth redirects by looking at
 the query/fragment parameters and acts accordingly. You still need to setup a
@@ -37,21 +37,21 @@ redirect uri, which must point to your application, but you do not need to
 create that route.
 
 To renew the access token, the
-[automatic silent renew](https://authts.github.io/oidc-client-ts/interfaces/UserManagerSettings.html#automaticSilentRenew)
-feature of `oidc-client-ts` can be used.
+[automatic silent renew](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerSettings.ts#L54)
+feature of `vps-oidc-client` can be used.
 
 ## Installation
 
 Using [npm](https://npmjs.org/)
 
 ```bash
-npm install oidc-client-ts react-oidc-context --save
+npm install vps-oidc-client vps-react-oidc-client --save
 ```
 
 Using [yarn](https://yarnpkg.com/)
 
 ```bash
-yarn add oidc-client-ts react-oidc-context
+yarn add vps-oidc-client vps-react-oidc-client
 ```
 
 ## Getting Started
@@ -124,7 +124,7 @@ export default App;
 
 You **must** provide an implementation of `onSigninCallback` to `oidcConfig` to remove the payload from the URL upon successful login. Otherwise if you refresh the page and the payload is still there, `signinSilent` - which handles renewing your token - won't work.
 
-A working implementation is already in the code [here](https://github.com/authts/react-oidc-context/blob/f175dcba6ab09871b027d6a2f2224a17712b67c5/src/AuthProvider.tsx#L20-L30).
+A working implementation is already in the code [here](https://github.com/tniah/react-oidc-context/blob/f175dcba6ab09871b027d6a2f2224a17712b67c5/src/AuthProvider.tsx#L20-L30).
 
 
 ### Use with a Class Component
@@ -357,5 +357,5 @@ which lacks error handling and
 ## License
 
 This project is licensed under the MIT license. See the
-[LICENSE](https://github.com/authts/react-oidc-context/blob/main/LICENSE) file
+[LICENSE](https://github.com/tniah/react-oidc-context/blob/main/LICENSE) file
 for more info.

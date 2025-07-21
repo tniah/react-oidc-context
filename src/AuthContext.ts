@@ -13,7 +13,7 @@ import type { AuthState } from "./AuthState";
  */
 export interface AuthContextProps extends AuthState {
     /**
-     * UserManager functions. See [UserManager](https://github.com/authts/oidc-client-ts) for more details.
+     * UserManager functions. See [UserManager](https://github.com/tniah/oidc-client-ts) for more details.
      */
     readonly settings: UserManagerSettings;
     readonly events: UserManagerEvents;
