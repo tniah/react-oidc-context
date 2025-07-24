@@ -1,6 +1,6 @@
 {
   "name": "vps-react-oidc-client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "OpenID Connect & OAuth2 authentication using react context api as state management",
   "repository": {
     "type": "git",
@@ -8,13 +8,13 @@
   },
   "homepage": "https://github.com/tniah/react-oidc-context#readme",
   "license": "MIT",
-  "main": "dist/umd/react-oidc-context.js",
-  "types": "dist/types/react-oidc-context.d.ts",
+  "main": "dist/umd/vps-react-oidc-client.js",
+  "types": "dist/types/vps-react-oidc-client.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/react-oidc-context.d.ts",
-      "import": "./dist/esm/react-oidc-context.js",
-      "require": "./dist/umd/react-oidc-context.js"
+      "types": "./dist/types/vps-react-oidc-client.d.ts",
+      "import": "./dist/esm/vps-react-oidc-client.js",
+      "require": "./dist/umd/vps-react-oidc-client.js"
     },
     "./package.json": "./package.json"
   },
