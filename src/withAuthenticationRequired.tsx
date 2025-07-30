@@ -1,5 +1,5 @@
 import React from "react";
-import type { SigninRedirectArgs } from "vps-oidc-client";
+import type { SigninRedirectArgs } from "oidc-client-lib";
 
 import { useAuth } from "./useAuth";
 import { hasAuthParams } from "./utils";

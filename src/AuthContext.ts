@@ -4,7 +4,7 @@ import type {
     SigninPopupArgs, SigninSilentArgs, SigninRedirectArgs,
     SignoutRedirectArgs, SignoutPopupArgs, QuerySessionStatusArgs,
     RevokeTokensTypes, SignoutSilentArgs, SigninResourceOwnerCredentialsArgs,
-} from "vps-oidc-client";
+} from "oidc-client-lib";
 
 import type { AuthState } from "./AuthState";
 
@@ -13,7 +13,7 @@ import type { AuthState } from "./AuthState";
  */
 export interface AuthContextProps extends AuthState {
     /**
-     * UserManager functions. See [UserManager](https://github.com/tniah/vps-oidc-client) for more details.
+     * UserManager functions. See [UserManager](https://github.com/tniah/oidc-client-lib) for more details.
      */
     readonly settings: UserManagerSettings;
     readonly events: UserManagerEvents;

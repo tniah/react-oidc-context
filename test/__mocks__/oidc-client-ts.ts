@@ -1,4 +1,4 @@
-import type { UserManager, UserManagerEvents, UserManagerSettings } from "vps-oidc-client";
+import type { UserManager, UserManagerEvents, UserManagerSettings } from "oidc-client-lib";
 
 const MockUserManager: typeof UserManager = jest.fn(function (this: { events: Partial<UserManagerEvents>; settings: Partial<UserManagerSettings> }, args: UserManagerSettings) {
     this.events = {

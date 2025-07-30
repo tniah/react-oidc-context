@@ -1,5 +1,5 @@
 {
-  "name": "vps-react-oidc-client",
+  "name": "react-oidc-client-lib",
   "version": "1.1.0",
   "description": "OpenID Connect & OAuth2 authentication using react context api as state management",
   "repository": {
@@ -8,13 +8,13 @@
   },
   "homepage": "https://github.com/tniah/react-oidc-context#readme",
   "license": "MIT",
-  "main": "dist/umd/vps-react-oidc-client.js",
-  "types": "dist/types/vps-react-oidc-client.d.ts",
+  "main": "dist/umd/react-oidc-client-lib.js",
+  "types": "dist/types/react-oidc-client-lib.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/types/vps-react-oidc-client.d.ts",
-      "import": "./dist/esm/vps-react-oidc-client.js",
-      "require": "./dist/umd/vps-react-oidc-client.js"
+      "types": "./dist/types/react-oidc-client-lib.d.ts",
+      "import": "./dist/esm/react-oidc-client-lib.js",
+      "require": "./dist/umd/react-oidc-client-lib.js"
     },
     "./package.json": "./package.json"
   },
@@ -40,7 +40,7 @@
     "prepare": "husky"
   },
   "peerDependencies": {
-    "vps-oidc-client": "^1.0.0",
+    "oidc-client-lib": "^1.0.0",
     "react": ">=16.14.0"
   },
   "devDependencies": {

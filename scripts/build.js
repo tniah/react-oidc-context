@@ -31,13 +31,13 @@ try {
     buildSync({
         ...opts,
         platform: "neutral",
-        outfile: "dist/esm/vps-react-oidc-client.js",
+        outfile: "dist/esm/react-oidc-client-lib.js",
     });
     // node
     buildSync({
         ...opts,
         platform: "node",
-        outfile: "dist/umd/vps-react-oidc-client.js",
+        outfile: "dist/umd/react-oidc-client-lib.js",
     });
     // generate package.json for esm
     const distPackageJson = { type: "module" , version };

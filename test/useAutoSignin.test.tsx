@@ -1,6 +1,6 @@
 import { createWrapper } from "./helpers";
 import { renderHook, waitFor } from "@testing-library/react";
-import { UserManager } from "vps-oidc-client";
+import { UserManager } from "oidc-client-lib";
 import { useAutoSignin } from "../src/useAutoSignin";
 import type { AuthProviderProps } from "../src";
 

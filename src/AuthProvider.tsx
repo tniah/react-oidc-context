@@ -1,5 +1,5 @@
-import type { ProcessResourceOwnerPasswordCredentialsArgs, SignoutResponse } from "vps-oidc-client";
-import { User, UserManager, type UserManagerSettings } from "vps-oidc-client";
+import type { ProcessResourceOwnerPasswordCredentialsArgs, SignoutResponse } from "oidc-client-lib";
+import { User, UserManager, type UserManagerSettings } from "oidc-client-lib";
 import React from "react";
 
 import { AuthContext } from "./AuthContext";

@@ -1,7 +1,7 @@
-# vps-react-oidc-client
+# react-oidc-client-lib
 
 Lightweight auth library using the
-[vps-oidc-client](https://github.com/tniah/oidc-client-ts) library for React
+[oidc-client-lib](https://github.com/tniah/oidc-client-lib) library for React
 single page applications (SPA). Support for
 [hooks](https://reactjs.org/docs/hooks-intro.html) and
 [higher-order components (HOC)](https://reactjs.org/docs/higher-order-components.html).
@@ -18,14 +18,14 @@ single page applications (SPA). Support for
 ## Documentation
 
 This library implements an auth context provider by making use of the
-`vps-oidc-client` library. Its configuration is tight coupled to that library.
+`oidc-client-lib` library. Its configuration is tight coupled to that library.
 
-- [vps-oidc-client](https://github.com/tniah/oidc-client-ts)
+- [oidc-client-lib](https://github.com/tniah/oidc-client-lib)
 
 The
-[`User`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/User.ts)
+[`User`](https://github.com/tniah/oidc-client-lib/blob/364961e12b28508cee6f556d90462f4630ee589c/src/User.ts)
 and
-[`UserManager`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManager.ts)
+[`UserManager`](https://github.com/tniah/oidc-client-lib/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManager.ts)
 is hold in this context, which is accessible from the
 React application. Additionally it intercepts the auth redirects by looking at
 the query/fragment parameters and acts accordingly. You still need to setup a
@@ -33,21 +33,21 @@ redirect uri, which must point to your application, but you do not need to
 create that route.
 
 To renew the access token, the
-[automatic silent renew](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerSettings.ts#L54)
-feature of `vps-oidc-client` can be used.
+[automatic silent renew](https://github.com/tniah/oidc-client-lib/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerSettings.ts#L54)
+feature of `oidc-client-lib` can be used.
 
 ## Installation
 
 Using [npm](https://npmjs.org/)
 
 ```bash
-npm install vps-oidc-client vps-react-oidc-client --save
+npm install oidc-client-lib react-oidc-client-lib --save
 ```
 
 Using [yarn](https://yarnpkg.com/)
 
 ```bash
-yarn add vps-oidc-client vps-react-oidc-client
+yarn add oidc-client-lib react-oidc-client-lib
 ```
 
 ## Getting Started
@@ -58,7 +58,7 @@ Configure the library by wrapping your application in `AuthProvider`:
 // src/index.jsx
 import React from "react";
 import ReactDOM from "react-dom";
-import { AuthProvider } from "vps-react-oidc-client";
+import { AuthProvider } from "react-oidc-client-lib";
 import App from "./App";
 
 const oidcConfig = {
@@ -83,7 +83,7 @@ Use the `useAuth` hook in your components to access authentication state
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth } from "vps-react-oidc-client";
+import { useAuth } from "react-oidc-client-lib";
 
 function App() {
     const auth = useAuth();
@@ -131,7 +131,7 @@ components:
 ```jsx
 // src/Profile.jsx
 import React from "react";
-import { withAuth } from "vps-react-oidc-client";
+import { withAuth } from "react-oidc-client-lib";
 
 class Profile extends React.Component {
     render() {
@@ -151,7 +151,7 @@ As a child of `AuthProvider` with a user containing an access token:
 ```jsx
 // src/Posts.jsx
 import React from "react";
-import { useAuth } from "vps-react-oidc-client";
+import { useAuth } from "react-oidc-client-lib";
 
 const Posts = () => {
     const auth = useAuth();
@@ -194,7 +194,7 @@ As **not** a child of `AuthProvider` (e.g. redux slice) when using local storage
 
 ```jsx
 // src/slice.js
-import { User } from "vps-oidc-client"
+import { User } from "oidc-client-lib"
 
 function getUser() {
     const oidcStorage = localStorage.getItem(`oidc.user:<your authority>:<your client id>`)
@@ -227,7 +227,7 @@ to access this route without authentication, they will be redirected to the logi
 
 ```jsx
 import React from 'react';
-import { withAuthenticationRequired } from "vps-react-oidc-client";
+import { withAuthenticationRequired } from "react-oidc-client-lib";
 
 const PrivateRoute = () => (<div>Private</div>);
 
@@ -238,12 +238,12 @@ export default withAuthenticationRequired(PrivateRoute, {
 
 ### Adding event listeners
 
-The underlying [`UserManagerEvents`](https://github.com/tniah/oidc-client-ts/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerEvents.ts) instance can be imperatively managed with the `useAuth` hook.
+The underlying [`UserManagerEvents`](https://github.com/tniah/oidc-client-lib/blob/364961e12b28508cee6f556d90462f4630ee589c/src/UserManagerEvents.ts) instance can be imperatively managed with the `useAuth` hook.
 
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth } from "vps-react-oidc-client";
+import { useAuth } from "react-oidc-client-lib";
 
 function App() {
     const auth = useAuth();
@@ -278,7 +278,7 @@ const oidcConfig: AuthProviderProps = {
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAuth, hasAuthParams } from "vps-react-oidc-client";
+import { useAuth, hasAuthParams } from "react-oidc-client-lib";
 
 function App() {
     const auth = useAuth();
@@ -316,7 +316,7 @@ Use the `useAutoSignin` hook inside the AuthProvider to automatically sign in.
 ```jsx
 // src/App.jsx
 import React from "react";
-import { useAutoSignin } from "vps-react-oidc-client";
+import { useAutoSignin } from "react-oidc-client-lib";
 
 function App() {
     // If you provide no signinMethod at all, the default is signinRedirect

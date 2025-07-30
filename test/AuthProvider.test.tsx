@@ -1,6 +1,6 @@
 import { renderHook, waitFor, act } from "@testing-library/react";
 import { mocked } from "jest-mock";
-import { UserManager, User } from "vps-oidc-client";
+import { UserManager, User } from "oidc-client-lib";
 import { useAuth } from "../src/useAuth";
 import { createWrapper } from "./helpers";
 
